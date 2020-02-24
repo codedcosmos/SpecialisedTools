@@ -1,0 +1,10 @@
+name: SpecialisedTools
+version: 0.2
+author: codedcosmos
+main: codedcosmos.specialisedtools.core.ToolsPlugin
+api-version: 1.15
+
+commands:
+  getspecialtool:
+    description:
+    usage: /getspecialtool [axe | pickaxe | hoe | shovel | sword]
