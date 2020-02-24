@@ -2,6 +2,7 @@
 
 This plugin adds many tools each with their own specific purpose to the game. Note you must press shift to activate the special functions.
 
+Youtube Demo:
 https://www.youtube.com/watch?v=Wurx0G5si2s
 
 -Aether Sword
