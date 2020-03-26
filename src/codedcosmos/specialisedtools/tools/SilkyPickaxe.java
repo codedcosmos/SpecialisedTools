@@ -5,7 +5,6 @@ import codedcosmos.specialisedtools.core.PlayerUtils;
 import codedcosmos.specialisedtools.core.TickDelayer;
 import codedcosmos.specialisedtools.enums.Orientation;
 import codedcosmos.specialisedtools.utils.Vector;
-import com.sun.org.apache.xpath.internal.operations.Or;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -55,7 +54,8 @@ public class SilkyPickaxe implements Listener {
 		ItemMeta itemmeta = item.getItemMeta();
 		
 		// If item or itemmeta is null ignore
-		if (item == null || itemmeta == null) return;
+		if (item == null || itemmeta == null || itemmeta.getLore() == null) return;
+		if (itemmeta.getLore().size() == 0) return;
 		
 		if (!itemmeta.getLore().get(0).equals(PICKAXE_LORE)) return;
 		

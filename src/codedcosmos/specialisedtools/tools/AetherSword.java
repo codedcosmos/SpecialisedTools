@@ -16,7 +16,7 @@ import org.bukkit.util.Vector;
 public class AetherSword implements Listener {
 	
 	public static final String SWORD_LORE = "Aether Sword";
-	public static final double VELOCITY_BUFFER = 0.3;
+	public static final double VELOCITY_BUFFER = 0.25;
 	
 	public static void giveTool(Player player) {
 		ItemUtils.givePlayerSpecialItem(player, Material.DIAMOND_SWORD, SWORD_LORE);
@@ -36,7 +36,8 @@ public class AetherSword implements Listener {
 		ItemMeta itemmeta = item.getItemMeta();
 		
 		// If item or itemmeta is null ignore
-		if (item == null || itemmeta == null) return;
+		if (item == null || itemmeta == null || itemmeta.getLore() == null) return;
+		if (itemmeta.getLore().size() == 0) return;
 		
 		if (!itemmeta.getLore().get(0).equals(SWORD_LORE)) return;
 		

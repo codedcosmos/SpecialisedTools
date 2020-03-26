@@ -7,7 +7,8 @@ plugins {
 }
 
 group 'codedcosmos'
-version '0.2'
+version '0.3'
+mainClassName = 'codedcosmos.specialisedtools.core.ToolsPlugin'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

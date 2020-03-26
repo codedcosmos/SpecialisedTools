@@ -52,7 +52,8 @@ public class MinerState {
 		ItemMeta itemmeta = item.getItemMeta();
 		
 		// If item or itemmeta is null ignore
-		if (item == null || itemmeta == null) return;
+		if (item == null || itemmeta == null || itemmeta.getLore() == null) return;
+		if (itemmeta.getLore().size() == 0) return;
 		
 		if (!itemmeta.getLore().get(0).equals(lore)) return;
 		
