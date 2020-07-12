@@ -1,8 +1,8 @@
 name: SpecialisedTools
-version: 0.2
+version: 0.4
 author: codedcosmos
 main: codedcosmos.specialisedtools.core.ToolsPlugin
-api-version: 1.15
+api-version: 1.16
 
 commands:
   getspecialtool:

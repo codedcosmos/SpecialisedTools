@@ -16,7 +16,7 @@ import java.util.List;
 
 public class VeinPickaxe implements Listener {
 	
-	public static final String PICKAXE_LORE = "Vein Pickaxe";
+	public static final String PICKAXE_LORE = "Vein Miner";
 	
 	public static void giveTool(Player player) {
 		ItemStack veinPickaxe = new ItemStack(Material.DIAMOND_PICKAXE);

@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'codedcosmos'
-version '0.3'
+version '0.4'
 mainClassName = 'codedcosmos.specialisedtools.core.ToolsPlugin'
 
 sourceCompatibility = 1.8
@@ -35,15 +35,7 @@ sourceSets {
 }
 
 dependencies {
-    compile ('net.dv8tion:JDA:4.1.1_101') {
-        exclude module: 'opus-java'
-    }
-
-    compile 'com.google.api-client:google-api-client:1.23.0'
-    compile 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
-    compile 'com.google.apis:google-api-services-drive:v3-rev110-1.23.0'
-
-    compileOnly 'org.spigotmc:spigot:1.15.2-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.16.1-R0.1-SNAPSHOT'
 }
 
 jar {
