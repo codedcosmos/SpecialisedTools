@@ -38,15 +38,15 @@ public class VeinPickaxe implements Listener {
 		// Make sure the player is shifting
 		if (!e.getPlayer().isSneaking()) return;
 		
-		List<Material> oreMaterials = Arrays.asList(
-				Material.COAL_ORE,
-				Material.DIAMOND_ORE,
-				Material.EMERALD_ORE,
-				Material.GOLD_ORE,
-				Material.IRON_ORE,
-				Material.LAPIS_ORE,
-				Material.NETHER_QUARTZ_ORE,
-				Material.REDSTONE_ORE);
+		List<String> oreMaterials = Arrays.asList(
+				"minecraft:coal_ore",
+				"minecraft:diamond_ore",
+				"minecraft:emerald_ore",
+				"minecraft:gold_ore",
+				"minecraft:iron_ore",
+				"minecraft:lapis_ore",
+				"minecraft:nether_quartz_ore",
+				"minecraft:redstone_ore");
 		
 		MinerState minerState = new MinerState(e, oreMaterials, PICKAXE_LORE, MinerState.BreakDir.DIRECT, 16);
 	}

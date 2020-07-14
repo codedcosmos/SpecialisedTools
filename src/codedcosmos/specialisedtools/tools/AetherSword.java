@@ -19,6 +19,7 @@ public class AetherSword implements Listener {
 	public static final double VELOCITY_BUFFER = 0.25;
 	
 	public static void giveTool(Player player) {
+		
 		ItemUtils.givePlayerSpecialItem(player, Material.DIAMOND_SWORD, SWORD_LORE);
 	}
 	
@@ -36,7 +37,7 @@ public class AetherSword implements Listener {
 		ItemMeta itemmeta = item.getItemMeta();
 		
 		// If item or itemmeta is null ignore
-		if (item == null || itemmeta == null || itemmeta.getLore() == null) return;
+		if (itemmeta == null || itemmeta.getLore() == null) return;
 		if (itemmeta.getLore().size() == 0) return;
 		
 		if (!itemmeta.getLore().get(0).equals(SWORD_LORE)) return;
@@ -51,8 +52,6 @@ public class AetherSword implements Listener {
 		vector.multiply(3);
 		vector.setY(vector.getY()/2+1);
 		e.getPlayer().setVelocity(vector);
-		
-		ItemUtils.removeDurability(e.getPlayer(), item, 5);
 	}
 	
 	

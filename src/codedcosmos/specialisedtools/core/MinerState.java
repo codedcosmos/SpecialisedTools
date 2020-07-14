@@ -1,5 +1,6 @@
 package codedcosmos.specialisedtools.core;
 
+import codedcosmos.specialisedtools.utils.Log;
 import codedcosmos.specialisedtools.utils.Vector;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -24,7 +25,7 @@ public class MinerState {
 	}
 	
 	// Basics
-	private List<Material> materials;
+	private List<String> materials;
 	private int max_blocks;
 	
 	// Locations
@@ -38,14 +39,18 @@ public class MinerState {
 	
 	private int blocksBroken = 0;
 	
-	public MinerState(BlockBreakEvent e, List<Material> materials, String lore, BreakDir dir, int max_blocks) {
+	public MinerState(BlockBreakEvent e, List<String> materials, String lore, BreakDir dir, int max_blocks) {
 		this.materials = materials;
 		this.max_blocks = max_blocks;
 		
 		Block block = e.getBlock();
 		
 		// If not accepter material ignore
-		if (!materials.contains(block.getType())) return;
+		Log.printErr(block.getBlockData().getAsString());
+		String blockname = block.getBlockData().getAsString();
+		// Remove [datatags]
+		blockname = blockname.split("\\[")[0];
+		if (!materials.contains(blockname)) return;
 		
 		// If not correct lore ignore
 		ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
@@ -104,8 +109,6 @@ public class MinerState {
 			}
 			
 		}
-		
-		ItemUtils.removeDurability(e.getPlayer(), item, blocksBroken);
 	}
 	
 	public void processLocation(Vector location) {

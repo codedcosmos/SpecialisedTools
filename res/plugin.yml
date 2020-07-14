@@ -1,5 +1,5 @@
 name: SpecialisedTools
-version: 0.4
+version: 1.0
 author: codedcosmos
 main: codedcosmos.specialisedtools.core.ToolsPlugin
 api-version: 1.16

@@ -33,14 +33,16 @@ public class FellingAxe implements Listener {
 		// Make sure the player is shifting
 		if (!e.getPlayer().isSneaking()) return;
 		
-		List<Material> logMaterials = Arrays.asList(
-				Material.ACACIA_LOG, Material.ACACIA_LEAVES,
-				Material.BIRCH_LOG, Material.BIRCH_LEAVES,
-				Material.DARK_OAK_LOG, Material.DARK_OAK_LEAVES,
-				Material.JUNGLE_LOG, Material.JUNGLE_LEAVES,
-				Material.OAK_LOG, Material.OAK_LEAVES,
-				Material.SPRUCE_LOG, Material.SPRUCE_LEAVES);
+		List<String> logMaterialNames = Arrays.asList(
+				"minecraft:acacia_log", "minecraft:acacia_leaves",
+				"minecraft:birch_log", "minecraft:birch_leaves",
+				"minecraft:dark_oak_log", "minecraft:dark_oak_leaves",
+				"minecraft:jungle_log", "minecraft:jungle_leaves",
+				"minecraft:oak_log", "minecraft:oak_leaves",
+				"minecraft:spruce_log", "minecraft:spruce_leaves",
+				"minecraft:warped_stem", "minecraft:warped_wart_block",
+				"minecraft:crimson_stem", "minecraft:nether_wart_block");
 		
-		MinerState minerState = new MinerState(e, logMaterials, AXE_LORE, MinerState.BreakDir.UP_DIAGONAL, 32);
+		MinerState minerState = new MinerState(e, logMaterialNames, AXE_LORE, MinerState.BreakDir.UP_DIAGONAL, 32);
 	}
 }

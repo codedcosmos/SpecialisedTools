@@ -26,30 +26,4 @@ public class ItemUtils {
 		
 		player.getInventory().addItem(item);
 	}
-	
-	public static void removeDurability(Player player, ItemStack item, int damageAmount) {
-		// Don't remove durability if in creative
-		if (player.getGameMode() == GameMode.CREATIVE) return;
-		
-		int unbreaking = item.getEnchantmentLevel(Enchantment.DURABILITY);
-		
-		if (unbreaking > 0) {
-			Random random = new Random();
-			
-			// http://minecraft.gamepedia.com/Enchantment#Enchantments
-			int chance = 100 / (unbreaking + 1);
-			int oldDamage = damageAmount;
-			
-			for (int i = 0; i < oldDamage; i++) {
-				if (random.nextInt(100) > chance) damageAmount--;
-			}
-		}
-		
-		item.setDurability((short) (item.getDurability() + damageAmount));
-		
-		if (item.getDurability() > item.getData().getItemType().getMaxDurability()) {
-			item.setAmount(0);
-			player.getInventory().setItemInMainHand(null);
-		}
-	}
 }

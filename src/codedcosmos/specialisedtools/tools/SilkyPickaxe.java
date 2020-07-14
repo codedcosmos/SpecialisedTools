@@ -103,7 +103,6 @@ public class SilkyPickaxe implements Listener {
 			}
 		}
 		
-		int blocksBroken = 3;
 		for (Vector position : positions) {
 			Block check = position.getLocation(world).getBlock();
 			
@@ -113,11 +112,7 @@ public class SilkyPickaxe implements Listener {
 				} else {
 					check.breakNaturally(item);
 				}
-				blocksBroken++;
 			}
 		}
-		blocksBroken*=5;
-		
-		ItemUtils.removeDurability(e.getPlayer(), item, blocksBroken);
 	}
 }

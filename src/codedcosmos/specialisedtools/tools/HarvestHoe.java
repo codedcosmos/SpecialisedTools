@@ -50,7 +50,7 @@ public class HarvestHoe implements Listener {
 		ItemMeta itemmeta = item.getItemMeta();
 		
 		// If item or itemmeta is null ignore
-		if (item == null || itemmeta == null || itemmeta.getLore() == null) return;
+		if (itemmeta == null || itemmeta.getLore() == null) return;
 		if (itemmeta.getLore().size() == 0) return;
 		
 		if (!itemmeta.getLore().get(0).equals(HOE_LORE)) return;
@@ -79,17 +79,13 @@ public class HarvestHoe implements Listener {
 		positions.add(new Vector(origin).add( 0, 0, 1));
 		positions.add(new Vector(origin).add( 0, 0,-1));
 		
-		int blocksConvertedToFarmland = 1;
 		for (Vector position : positions) {
 			Block check = position.getLocation(world).getBlock();
 			type = check.getType().equals(Material.DIRT) || check.getType().equals(Material.GRASS_BLOCK);
 			
 			if (type) {
 				check.setType(Material.FARMLAND);
-				blocksConvertedToFarmland++;
 			}
 		}
-		
-		ItemUtils.removeDurability(e.getPlayer(), item, blocksConvertedToFarmland);
 	}
 }
