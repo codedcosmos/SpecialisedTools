@@ -46,7 +46,8 @@ public class VeinPickaxe implements Listener {
 				"minecraft:iron_ore",
 				"minecraft:lapis_ore",
 				"minecraft:nether_quartz_ore",
-				"minecraft:redstone_ore");
+				"minecraft:redstone_ore",
+				"minecraft:nether_gold_ore");
 		
 		MinerState minerState = new MinerState(e, oreMaterials, PICKAXE_LORE, MinerState.BreakDir.DIRECT, 16);
 	}
